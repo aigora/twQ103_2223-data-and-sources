@@ -4,7 +4,9 @@
 
 ## Integrantes del equipo
 
-[Nombres, apellidos, y usuario GitHub de los integrantes del equipo.]
+María Mezquida Fernández mmezquidaf
+Carmen María Merino Montero 
+María Teresa Corrales Torresano
 
 ## Objetivos del trabajo
 
