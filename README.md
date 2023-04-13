@@ -1,12 +1,12 @@
-# [Título del trabajo]
+# [Data & Sources]
 
 [Descripción breve del proyecto a realizar (2-3 frases).]
 
 ## Integrantes del equipo
 
-María Mezquida Fernández mmezquidaf,
-Carmen María Merino Montero, 
-María Teresa Corrales Torresano.
+María Mezquida Fernández (mmezquidaf),
+Carmen María Merino Montero (CM2113), 
+María Teresa Corrales Torresano (Teresa-CorralesTorresano).
 
 ## Objetivos del trabajo
 
