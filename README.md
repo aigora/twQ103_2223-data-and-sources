@@ -4,9 +4,9 @@
 
 ## Integrantes del equipo
 
-María Mezquida Fernández mmezquidaf
-Carmen María Merino Montero 
-María Teresa Corrales Torresano
+María Mezquida Fernández mmezquidaf,
+Carmen María Merino Montero, 
+María Teresa Corrales Torresano.
 
 ## Objetivos del trabajo
 
