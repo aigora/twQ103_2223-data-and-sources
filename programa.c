@@ -14,14 +14,14 @@ void Banner(){
 	printf("          ||   \n"); color(hConsole, 1);
 	printf("     _____||_____\n"); color(hConsole, 1);
 	printf("    |            |\n"); color(hConsole, 1);
-	printf("    |            |\n"); color(hConsole, 1);
-	printf("    |____________|\n"); color(hConsole, 1);
-	printf("          ||   \n"); color(hConsole, 1);
+	printf("    |            |\n"); color(hConsole, 1); 
+	printf("    |____________|\n"); color(hConsole, 1);  printf("    %cDATA & SOURCES%c", 254, 254);
+	//printf("          ||   \n"); color(hConsole, 1);
 	printf("          ||\n"); color (hConsole, 1);
 	printf("   _______||_______\n"); color(hConsole, 1);
-	printf("  |                |\n"); color(hConsole, 1);
-	printf("  |                |\n"); color(hConsole, 1);
-	printf("  |________________|\n"); color(hConsole, 1);
+	printf("  (                )\n"); color(hConsole, 1);
+	printf("  (                )\n"); color(hConsole, 1);
+	printf("  (________________)\n"); color(hConsole, 1);
 	
 	color (hConsole, 15);
 	
