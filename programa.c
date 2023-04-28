@@ -11,9 +11,10 @@
 //Función banner
 void Banner(){
 	HANDLE hConsole = GetStdHandle (STD_OUTPUT_HANDLE);
-	color (hConsole, 1);
+	printf("Bienvenido a Data&Sources, esperamos que te sea util la aplicacion :)\n");
+	printf("\n");
 	
-	printf("      __________     \n"); color(hConsole, 1);
+	color(hConsole, 1);	printf("      __________     \n"); color(hConsole, 1);
 	printf("     |          |\n"); color(hConsole, 1);
 	printf("     |          |\n"); color(hConsole, 1);
 	printf("     |__________|\n"); color(hConsole, 1);
@@ -23,15 +24,13 @@ void Banner(){
 	printf("    |            |\n"); color(hConsole, 1); 
 	printf("    |____________|\n"); color(hConsole, 1); color(hConsole, 4);
 	printf("   %cDATA & SOURCES%c\n", 254, 254); color (hConsole, 1);
-	printf("          ||\n"); color (hConsole, 1);
-	printf("   _______||_______\n"); color(hConsole, 1);
-	printf("  (                )\n"); color(hConsole, 1);
-	printf("  (                )\n"); color(hConsole, 1);
-	printf("  (________________)\n"); color(hConsole, 1);
+	printf("          ||                   (.)< \n"); color (hConsole, 1);
+	printf("   _______||_______            ||\n"); color(hConsole, 1);
+	printf("  (                )      _ _ _||\n"); color(hConsole, 1);
+	printf("  (                )     (_ _ _ _)\n"); color(hConsole, 1);
+	printf("  (________________)        |_  |_    \n"); color(hConsole, 1);  
 	
 	color (hConsole, 15);
-	
-	return;
 }
 
 //Función para imprimir datos del fichero (Revisar)
