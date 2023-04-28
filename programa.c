@@ -152,6 +152,55 @@ int main () {
 			
 			case 4:
 				
+	do{
+		printf ("\n");
+		printf("	MENÚ INICIAL\n");
+		printf("	Escriba el número que representa la acción que desea realizar:\n");
+    	printf("	1. Consultar datos almacenados de fuentes\n");
+    	printf("	2. Promedio de propiedades de las fuentes\n");
+    	printf("	3. Calidad de la fuente según el pH\n");
+    	printf("	4. Motivos de utilización\n");
+    	printf("    5. Valoración final\n")
+    	printf("    6. Salir\n\n")
+
+		printf("	OPCIÓN: ");
+		scanf("%d", &opcion);
+		
+		switch(opcion){
+			case 1:
+				system("cls");
+				//función leer ficheros por barrio 
+				break;
+				
+			case 2:
+				system("cls");
+            	//función promedio o media de las propiedades segun el barrio 
+				break;
+				
+			case 3:
+				system("cls");
+				//Instrucciones pH
+				//funte con mejor pH según variables de un fichero
+				break;
+			
+			case 4: 
+				system("cls");
+				//Motivo de la utilización de la aplicación con porcetajes y opciones 
+				break;
+			
+			case 5:
+				system("cls");
+				//encuenta de valoración según si ha sido útil e intuitiva 
+				break; 
+		}
+		
+		
+	}while (opcion != 6);
+	
+	
+	system("cls");
+	printf("FIN DEL PROGRAMA\n");
+				
 				break;
 		}
 		
