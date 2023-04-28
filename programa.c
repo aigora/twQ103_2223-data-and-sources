@@ -28,6 +28,31 @@ void Banner(){
 	return;
 }
 
+int ImprimirDatos() {
+    int i;
+
+    struct TUsuario usuario [TAM_MAX];
+
+    FILE *fprueba;
+
+    fprueba = fopen("inicioprueba.txt", "r");
+    if(fprueba == NULL) {
+        printf("Error en la apertura de salida.\n");
+        return -1;
+    }
+
+    i=0;
+    while (fscanf(fprueba, "%s %s %s %s",usuario[i].nombre, usuario[i].apellidos, usuario[i].profesion, usuario[i].provincia) != EOF) {
+        printf("%s\t %s\t %s\t %s\n", usuario[i].nombre, usuario[i].apellidos, usuario[i].profesion, usuario[i].provincia);
+        i++;
+    }
+    printf("\n");
+    fclose (fprueba);
+
+
+    return 0;
+}
+
 int main () {
 	//Imprimir Banner
 	Banner();
