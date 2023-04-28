@@ -189,7 +189,30 @@ int main () {
 			
 			case 5:
 				system("cls");
-				//encuenta de valoración según si ha sido útil e intuitiva 
+				printf("Encuesta de valoración de la Aplicación");
+				printf("La respuesta de estas preguntas nos permite hacer un seguimiento de la aplicación para mejor la experiencia de los usuarios");
+	
+	
+				printf("\t"); 
+	
+				//Preguntar y obtener repsues del usuario
+				printf("1. ¿Ha encontrado útil la aplicación? (1-5)\n");
+				scanf("%d", &utilidad);
+				printf("2. ¿La aplicación resulta intuitiva? (1-5)\n");
+				scanf("%d", &experiencia);
+				printf("¿Volveías a utilizar la aplicación? (1-5)\n");
+				scanf("%d", &uso);
+	
+				//Calificación promedio de cada pregunta 
+				promedio_utilidad = (float)(utilidad) / 3;
+				promedio_experiencia = (float)(experiencia) / 3;
+				promedio_uso = (float)(uso) / 3;
+	
+				//resultados por pantalla 
+				printf("\nResultados:\n");
+				printf("1. Utilidad: %.2f\n", promedio_utilidad);
+				printf("2. Intuitiva: %.2f\n", promedio_experiencia);
+				printf("1. Utilidad: %.2f\n", promedio_uso); 
 				break; 
 		}
 		
