@@ -1,0 +1,3 @@
+	Instrucciones del programa:
+	El primer paso que debe realizar es iniciar la sesión.
+	A la hora de iniciar el programa se puden tener en cuenta dos opciones:
