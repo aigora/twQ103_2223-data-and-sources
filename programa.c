@@ -142,7 +142,7 @@ int ImprimirFicheros (){
 	setlocale(LC_ALL, "spanish"); 
 
 	printf("Introduce el fichero del cual quieres saber los datos: \n");
-	printf("	1. Lavapies (s/S).\n");
+	printf("	1. Lavapies (l/L).\n");
 	printf("	2. Chamberi (c/C).\n");
 	printf("	3. Salamanca (s/S).\n");
 	printf("	OPCIÓN: ");
@@ -302,7 +302,7 @@ int main () {
 				break;
 			
 			case 4:
-				
+				system("cls");
 				do{
 					printf ("\n");
 					printf("	MENÚ INICIAL\n");
@@ -313,34 +313,39 @@ int main () {
     				printf("	4. Motivos de utilización\n");
     				printf("	5. Valoración final\n");
     				printf("	6. Salir\n\n");
-
+					fflush(stdin);
 					printf("	OPCIÓN: ");
 					scanf("%d", &opcion1);
 		
-					switch(opcion){
+					switch(opcion1){
 						case 1:
+							fflush(stdin);
 							system("cls");
 							ImprimirFicheros ();
 							//función leer ficheros por barrio 
 							break;
 				
 						case 2:
+							fflush(stdin);
 							system("cls");
             				//función promedio o media de las propiedades segun el barrio 
 							break;
 				
 						case 3:
+							fflush(stdin);
 							system("cls");
 							//Instrucciones pH
 							//funte con mejor pH según variables de un fichero
 							break;
 			
 						case 4: 
+							fflush(stdin);
 							system("cls");
 							//Motivo de la utilización de la aplicación con porcetajes y opciones 
 							break;
 			
 						case 5:
+							fflush(stdin);
 							system("cls");
 							printf("Encuesta de valoración de la Aplicación");
 							printf("La respuesta de estas preguntas nos permite hacer un seguimiento de la aplicación para mejor la experiencia de los usuarios");
@@ -371,7 +376,7 @@ int main () {
 					}while(opcion1 != 6);
 		
 		}
-	}while (opcion != 6);
+	}while (opcion != 5);
 
 	
 	
