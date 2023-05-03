@@ -96,6 +96,7 @@ int InicioDeSesion () {
 	printf("\n");
 	fprintf(fdatos, "%s\t", usuario[i].provincia);
 	fprintf(fdatos, "\n");
+	fclose(fdatos);
 	
 	return 0;
 }
