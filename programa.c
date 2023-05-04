@@ -249,10 +249,19 @@ int Instrucciones(){
 
 //Función verificación de datos
 
+//Funcion promedio 
+float promedio (int funcion, float dim){
+   
+    float resultado;
+   
+    resultado = (float) funcion/dim;
+   
+    return resultado;
+}
+
 int main () {
 	//Declaración de variables
-	int i, opcion, opcion1, utilidad, experiencia, uso;
-	float promedio_utilidad, promedio_experiencia, promedio_uso;
+	int i, opcion, opcion1, utilidad, experiencia, uso, dim =3;
 	char respuesta;
 	FILE *fdatos;	
 	//Imprimir Banner
@@ -355,23 +364,21 @@ int main () {
 							printf("\t"); 
 	
 							//Preguntar y obtener repsues del usuario
-							printf("1. ¿Ha encontrado útil la aplicación? (1-5)\n");
-							scanf("%d", &utilidad);
-							printf("2. ¿La aplicación resulta intuitiva? (1-5)\n");
-							scanf("%d", &experiencia);
-							printf("¿Volveías a utilizar la aplicación? (1-5)\n");
-							scanf("%d", &uso);
-	
-							//Calificación promedio de cada pregunta 
-							promedio_utilidad = (float)(utilidad) / 3;
-							promedio_experiencia = (float)(experiencia) / 3;
-							promedio_uso = (float)(uso) / 3;
+							printf("    1. ¿Ha encontrado útil la aplicación? (1-5)\n");
+                            printf("        RESPUESTA: ");
+                            scanf("%d", &utilidad);
+                            printf("    2. ¿La aplicación resulta intuitiva? (1-5)\n");
+                            printf("        RESPUESTA: ");
+                            scanf("%d", &experiencia);
+                            printf("    ¿Volveías a utilizar la aplicación? (1-5)\n");
+                            printf("        RESPUESTA: ");
+                            scanf("%d", &uso);
 	
 							//resultados por pantalla 
-							printf("\nResultados:\n");
-							printf("1. Utilidad: %.2f\n", promedio_utilidad);
-							printf("2. Intuitiva: %.2f\n", promedio_experiencia);
-							printf("1. Utilidad: %.2f\n", promedio_uso); 
+							printf("    \nResultados:\n");
+                            printf("    1. Utilidad: %.2f\n", promedio (utilidad,  dim));
+                            printf("    2. Intuitiva: %.2f\n", promedio (experiencia, dim));
+                            printf("    1. Utilidad: %.2f\n", promedio (uso, dim)); 
 							break; 
 						}
 					}while(opcion1 != 6);
