@@ -244,6 +244,7 @@ int Instrucciones(){
     while(((c = fgetc(pinstrucciones))) != EOF) {
         printf("%c", c);
     }
+    printf("\n\n");
     return 0;
 }
 
