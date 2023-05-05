@@ -432,6 +432,7 @@ void menuPromedio () {
 		
 		case 1: 
 			system("cls");
+			//función pH
 			pH ();
 			break; 
 		case 2: 
