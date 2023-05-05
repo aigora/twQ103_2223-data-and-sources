@@ -388,24 +388,26 @@ void encuesta() {
 	
 	int utilidad, experiencia, uso, dim = 3;
 	
-	printf("\t"); 
+
 	
 	//Preguntar y obtener respuestas del usuario
-	printf("    1. ¿Ha encontrado útil la aplicación? (1-5)\n");
+	printf("	1. ¿Ha encontrado útil la aplicación? (1-5)\n");
     printf("		RESPUESTA: ");
     scanf("%d", &utilidad);
-    printf("    2. ¿La aplicación resulta intuitiva? (1-5)\n");
+    printf("	2. ¿La aplicación resulta intuitiva? (1-5)\n");
     printf("		RESPUESTA: ");
     scanf("%d", &experiencia);
-    printf("    ¿Volveías a utilizar la aplicación? (1-5)\n");
+    printf("	3. ¿Volverías a utilizar la aplicación? (1-5)\n");
     printf("		RESPUESTA: ");
     scanf("%d", &uso);
 	
 	//resultados por pantalla 
 	printf("    \nResultados:\n");
-    printf("    1. Utilidad: %.2f\n", promedio (utilidad,  dim));
-    printf("    2. Intuitiva: %.2f\n", promedio (experiencia, dim));
-    printf("    1. Utilidad: %.2f\n", promedio (uso, dim)); 
+    printf("	1. Utilidad: %.2f\n", promedio (utilidad,  dim));
+    printf("	2. Intuitiva: %.2f\n", promedio (experiencia, dim));
+    printf("	3. Reutilización: %.2f\n", promedio (uso, dim)); 
+    //Resultado final sobre 5
+    printf("	Resultado final sobre 5 de su experiencia con la aplicación: %.2f\n", promedio (utilidad,  dim) + promedio (experiencia, dim) + promedio (uso, dim));
 }
 
 int main () {
