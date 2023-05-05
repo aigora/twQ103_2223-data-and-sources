@@ -5,6 +5,7 @@
 #define color SetConsoleTextAttribute
 #define TAM_MAX 300
 
+
 //Declaración de estructuras
 
 //Estructura para guardar los datos del usuario
@@ -58,6 +59,8 @@ int InicioDeSesion () {
 	
 	struct TUsuario usuario [TAM_MAX];
 	
+	int encontrado = 0, contadorestudiante = 0, contadorprofesor = 0, contadorciudadano = 0;
+	
 	int i = 0;
 	
 	FILE *fdatos;
@@ -82,12 +85,25 @@ int InicioDeSesion () {
 	printf("\n");
 	fprintf(fdatos, "%s\t", usuario[i].apellidos);
 	
-	printf("	Intruduce tu profesión: \n");
+	printf("	Intruduce tu profesión (estudiante, profesor o ciudadano): \n");
 	printf("	PROFESIÓN: ");
 	fflush(stdin);
 	gets(usuario[i].profesion);
 	printf("\n");
 	fprintf(fdatos, "%s\t", usuario[i].profesion);
+	if(strcmp(usuario[i].profesion, "estudiante") == 0){
+		contadorestudiante++;
+		encontrado = 1;
+	} else if(strcmp(usuario[i].profesion, "profesor") == 0){
+		contadorprofesor++;
+		encontrado = 1;
+	}else if(strcmp(usuario[i].profesion, "ciudadano") == 0){
+		contadorciudadano++;
+		encontrado = 1;
+	}else{
+		printf("	No ha seleccionado nunguna opción correcta vuelva a intentarlo.\n");
+		return 0;
+	}
 
 	printf("	Intruduce tu provincia: \n");
 	printf("	PROVINCIA: ");
@@ -249,6 +265,109 @@ int Instrucciones(){
 }
 
 //Función verificación de datos
+int VerificacionDatos (){ 
+	int num_fuentes = 0;
+	char respuesta;
+	printf("¿Son sus datos correctos? Si(s) o No(n): ");
+	fflush(stdin);
+	scanf("%c", &respuesta);
+	if(respuesta == 'n' || respuesta == 'N'){
+		printf("Vuelva a introducir sus datos.\n");
+		InicioDeSesion();
+		return 0;
+	}else{
+		printf("Sus datos son correctos, puede continuar con el programa.\n");
+	}
+	return 0;
+}
+
+//Función pH
+int pH() {
+	int contadorsalamanca, contadorlavapies, contadorchamberi;
+	
+	char linea[100];
+	
+	int num_fuentes = 0;
+	
+	struct TFuente fuentes[TAM_MAX];
+	
+	FILE *flavapies, *fsalamanca, *fchamberi;
+	
+		flavapies = fopen("Lavapies.txt", "r");
+		if(flavapies == NULL) {
+			printf("Error en la apertura de salida.\n");
+			return -1;
+		}
+	
+   		while (fscanf(flavapies, "%s %f %d %d %d", fuentes[num_fuentes].fuentes, &fuentes[num_fuentes].pH, &fuentes[num_fuentes].conductividad, &fuentes[num_fuentes].turbidez, &fuentes[num_fuentes].coliformes) != EOF) {
+	  		 if (num_fuentes >= TAM_MAX){
+        		printf("Error: demasiadas fuentes en el fichero\n");
+        		break;
+			}
+			if(6.5<= fuentes[num_fuentes].pH <= 9.5){
+				contadorlavapies++;
+			}
+   		 }
+    
+    	if(num_fuentes == 0){
+    		printf("Error: archivo vacio\n");
+		} 
+		fclose (flavapies);
+		
+
+		fchamberi = fopen("Chamberi.txt", "r");
+		if(fchamberi == NULL) {
+			printf("Error en la apertura de salida.\n");
+			return -1;
+		}
+	
+	
+   		while (fscanf(fchamberi, "%s %f %d %d %d", fuentes[num_fuentes].fuentes, &fuentes[num_fuentes].pH, &fuentes[num_fuentes].conductividad, &fuentes[num_fuentes].turbidez, &fuentes[num_fuentes].coliformes) != EOF) {
+	  		 if (num_fuentes >= TAM_MAX){
+        		printf("Error: demasiadas fuentes en el fichero\n");
+        		break;
+			}
+			if(6.5<= fuentes[num_fuentes].pH <= 9.5){
+				contadorchamberi++;
+			}
+   		 }
+    
+    	if(num_fuentes == 0){
+    		printf("Error: archivo vacio\n");
+		} 
+		fclose (fchamberi);
+		
+		fsalamanca = fopen("Salamanca.txt", "r");
+		if(fsalamanca == NULL) {
+			printf("Error en la apertura de salida.\n");
+			return -1;
+		}
+	
+   		while (fscanf(fsalamanca, "%s %f %d %d %d", fuentes[num_fuentes].fuentes, &fuentes[num_fuentes].pH, &fuentes[num_fuentes].conductividad, &fuentes[num_fuentes].turbidez, &fuentes[num_fuentes].coliformes) != EOF) {
+	  		 if (num_fuentes >= TAM_MAX){
+        		printf("Error: demasiadas fuentes en el fichero\n");
+        		break;
+			}
+			if(6.5<= fuentes[num_fuentes].pH <= 9.5){
+				contadorsalamanca++;
+			}
+   		 }
+    
+    	if(num_fuentes == 0){
+    		printf("Error: archivo vacio\n");
+		} 
+		fclose (fsalamanca);
+
+	if (contadorsalamanca > contadorlavapies && contadorsalamanca > contadorchamberi){
+		printf("El barrio con mejor pH es el barrio Salamanca.\n");
+	}else if (contadorlavapies > contadorsalamanca && contadorlavapies > contadorchamberi){
+		printf("El barrio con mejor pH es el barrio de Lavapies.\n");
+	}else {
+		printf("El barrio con mejor pH es el barrio de Chamberi.\n");
+	}
+
+	return 0;
+}
 
 //Funcion promedio 
 float promedio (int funcion, float dim){
@@ -260,10 +379,39 @@ float promedio (int funcion, float dim){
     return resultado;
 }
 
+//Función encuesta
+void encuesta() {
+	fflush(stdin);
+	system("cls");
+	printf("Encuesta de valoración de la Aplicación\n");
+	printf("La respuesta de estas preguntas nos permite hacer un seguimiento de la aplicación para mejor la experiencia de los usuarios\n\n");
+	
+	int utilidad, experiencia, uso, dim = 3;
+	
+	printf("\t"); 
+	
+	//Preguntar y obtener respuestas del usuario
+	printf("    1. ¿Ha encontrado útil la aplicación? (1-5)\n");
+    printf("		RESPUESTA: ");
+    scanf("%d", &utilidad);
+    printf("    2. ¿La aplicación resulta intuitiva? (1-5)\n");
+    printf("		RESPUESTA: ");
+    scanf("%d", &experiencia);
+    printf("    ¿Volveías a utilizar la aplicación? (1-5)\n");
+    printf("		RESPUESTA: ");
+    scanf("%d", &uso);
+	
+	//resultados por pantalla 
+	printf("    \nResultados:\n");
+    printf("    1. Utilidad: %.2f\n", promedio (utilidad,  dim));
+    printf("    2. Intuitiva: %.2f\n", promedio (experiencia, dim));
+    printf("    1. Utilidad: %.2f\n", promedio (uso, dim)); 
+}
+
 int main () {
 	//Declaración de variables
-	int i, opcion, opcion1, utilidad, experiencia, uso, dim =3;
-	char respuesta;
+	int i, opcion, opcion1, opcion2;
+	//char respuesta;
 	FILE *fdatos;	
 	//Imprimir Banner
 	Banner();
@@ -300,16 +448,7 @@ int main () {
 				system("cls");
             	printf("\n");
 				ImprimirDatos();
-				printf("¿Son sus datos correctos? Si(s) o No(n): ");
-				fflush(stdin);
-				scanf("%c", &respuesta);
-				if(respuesta == 'n' || respuesta == 'N'){
-					printf("Vuelva a introducir sus datos.\n");
-					InicioDeSesion();
-					break;
-				}else{
-					printf("Sus datos son correctos, puede continuar con el programa.\n");
-				}
+				VerificacionDatos();
 				break;
 			
 			case 4:
@@ -320,10 +459,9 @@ int main () {
 					printf("	Escriba el número que representa la acción que desea realizar:\n");
     				printf("	1. Consultar datos almacenados de fuentes\n");
     				printf("	2. Promedio de propiedades de las fuentes\n");
-    				printf("	3. Calidad de la fuente según el pH\n");
-    				printf("	4. Motivos de utilización\n");
-    				printf("	5. Valoración final\n");
-    				printf("	6. Salir\n\n");
+    				printf("	3. Motivos de utilización\n");
+    				printf("	4. Valoración final\n");
+    				printf("	5. Salir\n\n");
 					fflush(stdin);
 					printf("	OPCIÓN: ");
 					scanf("%d", &opcion1);
@@ -341,54 +479,21 @@ int main () {
 							system("cls");
             				//función promedio o media de las propiedades segun el barrio 
 							break;
-				
-						case 3:
-							fflush(stdin);
-							system("cls");
-							//Instrucciones pH
-							//funte con mejor pH según variables de un fichero
-							break;
 			
-						case 4: 
+						case 3: 
 							fflush(stdin);
 							system("cls");
 							//Motivo de la utilización de la aplicación con porcetajes y opciones 
 							break;
 			
-						case 5:
-							fflush(stdin);
-							system("cls");
-							printf("Encuesta de valoración de la Aplicación");
-							printf("La respuesta de estas preguntas nos permite hacer un seguimiento de la aplicación para mejor la experiencia de los usuarios");
-	
-	
-							printf("\t"); 
-	
-							//Preguntar y obtener repsues del usuario
-							printf("    1. ¿Ha encontrado útil la aplicación? (1-5)\n");
-                            printf("        RESPUESTA: ");
-                            scanf("%d", &utilidad);
-                            printf("    2. ¿La aplicación resulta intuitiva? (1-5)\n");
-                            printf("        RESPUESTA: ");
-                            scanf("%d", &experiencia);
-                            printf("    ¿Volveías a utilizar la aplicación? (1-5)\n");
-                            printf("        RESPUESTA: ");
-                            scanf("%d", &uso);
-	
-							//resultados por pantalla 
-							printf("    \nResultados:\n");
-                            printf("    1. Utilidad: %.2f\n", promedio (utilidad,  dim));
-                            printf("    2. Intuitiva: %.2f\n", promedio (experiencia, dim));
-                            printf("    1. Utilidad: %.2f\n", promedio (uso, dim)); 
+						case 4:
+                            encuesta();
 							break; 
 						}
-					}while(opcion1 != 6);
-		
+					}while(opcion1 != 5);
 		}
 	}while (opcion != 5);
 
-	
-	
 	system("cls");
 	printf("FIN DEL PROGRAMA\n");
 	
