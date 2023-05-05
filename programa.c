@@ -300,7 +300,7 @@ int pH() {
 		}
 	
    		while (fscanf(flavapies, "%s %f %d %d %d", fuentes[num_fuentes].fuentes, &fuentes[num_fuentes].pH, &fuentes[num_fuentes].conductividad, &fuentes[num_fuentes].turbidez, &fuentes[num_fuentes].coliformes) != EOF) {
-	  		 if (num_fuentes >= TAM_MAX){
+	  		 if (++num_fuentes >= TAM_MAX){
         		printf("Error: demasiadas fuentes en el fichero\n");
         		break;
 			}
@@ -323,7 +323,7 @@ int pH() {
 	
 	
    		while (fscanf(fchamberi, "%s %f %d %d %d", fuentes[num_fuentes].fuentes, &fuentes[num_fuentes].pH, &fuentes[num_fuentes].conductividad, &fuentes[num_fuentes].turbidez, &fuentes[num_fuentes].coliformes) != EOF) {
-	  		 if (num_fuentes >= TAM_MAX){
+	  		 if (++num_fuentes >= TAM_MAX){
         		printf("Error: demasiadas fuentes en el fichero\n");
         		break;
 			}
@@ -344,7 +344,7 @@ int pH() {
 		}
 	
    		while (fscanf(fsalamanca, "%s %f %d %d %d", fuentes[num_fuentes].fuentes, &fuentes[num_fuentes].pH, &fuentes[num_fuentes].conductividad, &fuentes[num_fuentes].turbidez, &fuentes[num_fuentes].coliformes) != EOF) {
-	  		 if (num_fuentes >= TAM_MAX){
+	  		 if (++num_fuentes >= TAM_MAX){
         		printf("Error: demasiadas fuentes en el fichero\n");
         		break;
 			}
@@ -410,6 +410,50 @@ void encuesta() {
     printf("	Resultado final sobre 5 de su experiencia con la aplicación: %.2f\n", promedio (utilidad,  dim) + promedio (experiencia, dim) + promedio (uso, dim));
 }
 
+//Función MenúPromedio
+void menuPromedio () {
+	
+	int opcion2;
+	setlocale (LC_CTYPE,"spanish");
+	
+	do {
+	
+	printf("\n\n PROMEDIO DE PROPIEDADES DE LAS FUENTES \n\n");
+	printf("    1. Calidad promedio según el ph\n");
+	printf("	2. Calidad promedio según la conductividad\n");
+	printf("	3. Calidad promedio según la turbidez\n");
+	printf("	4. Calidad promedio según los coliformes\n");
+	printf("	5. Salir\n");
+	fflush(stdin);
+	printf("   OPCIÓN: ");
+	scanf("%d", &opcion2);
+	
+	switch (opcion2) {
+		
+		case 1: 
+			system("cls");
+			pH ();
+			break; 
+		case 2: 
+			system("cls");
+			//funcion conductividad 
+			break;
+		case 3: 
+			system("cls");
+			//funcion turbidez
+			break;
+		case 4: 
+			system("cls");
+			//funcion coliformes
+			break;
+		
+	}
+	
+	} while(opcion2 != 5);
+	
+}
+
+
 int main () {
 	//Declaración de variables
 	int i, opcion, opcion1, opcion2;
@@ -472,14 +516,15 @@ int main () {
 						case 1:
 							fflush(stdin);
 							system("cls");
-							ImprimirFicheros ();
-							//función leer ficheros por barrio 
+							//función leer ficheros por barrio
+							ImprimirFicheros (); 
 							break;
 				
 						case 2:
 							fflush(stdin);
 							system("cls");
-            				//función promedio o media de las propiedades segun el barrio 
+            				//función menú
+            				menuPromedio ();
 							break;
 			
 						case 3: 
