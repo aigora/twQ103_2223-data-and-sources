@@ -1,0 +1,10 @@
+	
+	COLIFORMES
+	
+	Las bacterias coliformes a menudo se denominan "organismos indicadores" porque indican
+	la presencia potencial de bacterias que causan enfermedades en el agua.
+	Los coliformes pueden indicar que  existe una vía de contaminación entre una fuente de 
+	bacterias (agua superficial, sistema séptico, desechos animales, etc.) y el suministro de agua.
+	Aunque en algunos casos los coliformes no sean bacterias infecciosas, lo ideal es que los
+	indicadores en el agua potable apta para el consumo humano sean siempre menores que 0.
+

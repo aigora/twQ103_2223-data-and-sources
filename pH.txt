@@ -1,0 +1,10 @@
+	Información pH:
+
+
+	El intervalo de pH más adecuado para el agua potable es [6.5 - 9.5]. 
+	Si se quiere utilizar el agua para la dieta de un bebé se recomienda que el agua sea alcalina, es decir, con pH>7. Sin embargo, no es aconsejable para personas con enfermedades 	relacionadas con el hígado y/o los riñones.
+
+	En cuanto a los adultos, la mayor parte de la población adulta tiene un estado sanguíneo ácido, como resultado de la ingesta de alimentos y bebidas azucaradas, comidas precocinadas y 	alcohol. 
+	Que la sangre esté en un estado de acidez significa que tiene un pH bajo, por tanto tendrá menor capacidad de absorción de los nutrientes, que repercute directamente en la salud. 
+	Debido a lo anterior concluimos que es mejor beber agua con un pH elevado (sobre 8) para que ayude a la sangre a alcanzar un estado alcalino.
+

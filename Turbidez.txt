@@ -1,0 +1,10 @@
+
+	TURBIDEZ 
+
+	La  turbidez  es  uno  de  los  parámetros más importantes en la calidad del agua, 
+	es un indicativo de su contaminación, tiene un papel importante en el desempeño de laboratorios 
+	de prueba de análisis de las plantas de tratamiento de aguas residuales y de plantas 
+	purificadoras de agua. Los sólidos dispersos y las partículas presentes en el agua pueden 
+	actuar como portadores de parásitos, bacterias, gérmenes y virus. 
+	Según la OMS (Organización Mundial para la Salud), la turbidez del agua para consumo 
+	humano no debe superar en ningún caso las 5 NTU, y estará idealmente por debajo de 1 NTU
