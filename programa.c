@@ -410,6 +410,64 @@ void encuesta() {
     printf("	Resultado final sobre 5 de su experiencia con la aplicación: %.2f\n", promedio (utilidad,  dim) + promedio (experiencia, dim) + promedio (uso, dim));
 }
 
+//Función lectura de fichero turbidez 
+int Turbidez(){
+    FILE *pturbidez;
+    pturbidez = fopen("Turbidez.txt", "r");
+    char lineainstrucciones[80];
+    if(pturbidez == NULL){
+       printf("	Error en la apertura del fichero\n");
+       return -1;
+    }
+
+    char c;
+
+    while(((c = fgetc(pturbidez))) != EOF) {
+        printf("%c", c);
+    }
+    printf("\n\n");
+    return 0;
+}
+
+//Función lectura de fichero coliformes 
+int Coliformes(){
+    FILE *pcoliformes;
+    pcoliformes = fopen("Coliformes.txt", "r");
+    char lineainstrucciones[80];
+    if(pcoliformes == NULL){
+       printf("	Error en la apertura del fichero\n");
+       return -1;
+    }
+
+    char c;
+
+    while(((c = fgetc(pcoliformes))) != EOF) {
+        printf("%c", c);
+    }
+    printf("\n\n");
+    return 0;
+}
+
+
+//Función lectura fichero pH 
+int ficheroPH(){
+    FILE *pPH;
+    pPH = fopen("pH.txt", "r");
+    char lineainstrucciones[80];
+    if(pPH == NULL){
+       printf("	Error en la apertura del fichero\n");
+       return -1;
+    }
+
+    char c;
+
+    while(((c = fgetc(pPH))) != EOF) {
+        printf("%c", c);
+    }
+    printf("\n\n");
+    return 0;
+}
+
 //Función MenúPromedio
 void menuPromedio () {
 	
@@ -419,7 +477,7 @@ void menuPromedio () {
 	do {
 	
 	printf("\n\n PROMEDIO DE PROPIEDADES DE LAS FUENTES \n\n");
-	printf("    1. Calidad promedio según el ph\n");
+	printf("    \n\n1. Calidad promedio según el ph\n");
 	printf("	2. Calidad promedio según la conductividad\n");
 	printf("	3. Calidad promedio según la turbidez\n");
 	printf("	4. Calidad promedio según los coliformes\n");
@@ -432,6 +490,8 @@ void menuPromedio () {
 		
 		case 1: 
 			system("cls");
+			//función leer fichero 
+			ficheroPH ();
 			//función pH
 			pH ();
 			break; 
@@ -441,10 +501,14 @@ void menuPromedio () {
 			break;
 		case 3: 
 			system("cls");
-			//funcion turbidez
+			//Función leer fichero 
+			Turbidez ();
+			//función turbidez
 			break;
 		case 4: 
 			system("cls");
+			//función leer fichero 
+			Coliformes ();
 			//funcion coliformes
 			break;
 		
