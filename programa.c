@@ -32,7 +32,7 @@ void Banner(){
 	HANDLE hConsole = GetStdHandle (STD_OUTPUT_HANDLE);
 	printf("Bienvenido a Data&Sources, esperamos que te sea util la aplicacion :)\n");
 	printf("\n");
-	
+
 	color(hConsole, 1);	printf("      __________     \n"); color(hConsole, 1);
 	printf("     |          |\n"); color(hConsole, 1);
 	printf("     |          |\n"); color(hConsole, 1);
@@ -40,15 +40,15 @@ void Banner(){
 	printf("          ||   \n"); color(hConsole, 1);
 	printf("     _____||_____\n"); color(hConsole, 1);
 	printf("    |            |\n"); color(hConsole, 1);
-	printf("    |            |\n"); color(hConsole, 1); 
+	printf("    |            |\n"); color(hConsole, 1);
 	printf("    |____________|\n"); color(hConsole, 1); color(hConsole, 4);
 	printf("   %cDATA & SOURCES%c\n", 254, 254); color (hConsole, 1);
 	printf("          ||                   (.)< \n"); color (hConsole, 1);
 	printf("   _______||_______            ||\n"); color(hConsole, 1);
 	printf("  (                )      _ _ _||\n"); color(hConsole, 1);
 	printf("  (                )     (_ _ _ _)\n"); color(hConsole, 1);
-	printf("  (________________)        |_  |_    \n"); color(hConsole, 1);  
-	
+	printf("  (________________)        |_  |_    \n"); color(hConsole, 1);
+
 	color (hConsole, 15);
 }
 
@@ -56,35 +56,35 @@ void Banner(){
 
 //Función para inicio de sesión
 int InicioDeSesion () {
-	
+
 	struct TUsuario usuario [TAM_MAX];
-	
+
 	int encontrado = 0, contadorestudiante = 0, contadorprofesor = 0, contadorciudadano = 0;
-	
+
 	int i = 0;
-	
+
 	FILE *fdatos;
-	
+
 	fdatos = fopen("DatosUsuarios.txt", "a");
 	if(fdatos == NULL) {
 		printf("Error en la apertura de salida.\n");
 		return -1;
 	}
-	
+
 	printf("	Intruduce tu nombre: \n");
 	printf("	NOMBRE: ");
 	fflush(stdin);
 	gets(usuario[i].nombre);
 	printf("\n");
 	fprintf(fdatos, "%s\t", usuario[i].nombre);
-				
+
 	printf("	Intruduce tus apellidos: \n");
 	printf("	APELLIDOS: ");
 	fflush(stdin);
 	gets(usuario[i].apellidos);
 	printf("\n");
 	fprintf(fdatos, "%s\t", usuario[i].apellidos);
-	
+
 	printf("	Intruduce tu profesión (estudiante, profesor o ciudadano): \n");
 	printf("	PROFESIÓN: ");
 	fflush(stdin);
@@ -101,7 +101,7 @@ int InicioDeSesion () {
 		contadorciudadano++;
 		encontrado = 1;
 	}else{
-		printf("	No ha seleccionado nunguna opción correcta vuelva a intentarlo.\n");
+		printf("	No ha seleccionado ninguna opción correcta vuelva a intentarlo.\n");
 		return 0;
 	}
 
@@ -113,26 +113,26 @@ int InicioDeSesion () {
 	fprintf(fdatos, "%s\t", usuario[i].provincia);
 	fprintf(fdatos, "\n");
 	fclose(fdatos);
-	
+
 	return 0;
 }
 
 //Función para imprimir datos del fichero del inicio de sesion (Revisar)
 
 int ImprimirDatos() {
-	
+
 	struct TUsuario usuario[TAM_MAX];
-	
+
 	int i;
-	
+
 	FILE *fdatos;
-	
+
 	fdatos = fopen("DatosUsuarios.txt", "r");
 	if(fdatos == NULL){
 		printf("Error en la apertura del fichero.\n");
 		return -1;
 	}
-	
+
 	i=0;
 	while(fscanf(fdatos, "%s %s %s %s", usuario[i].nombre, usuario[i].apellidos, usuario[i].profesion, usuario[i].provincia) != EOF){
 		printf("%s\t %s\t %s\t %s\n", usuario[i].nombre, usuario[i].apellidos, usuario[i].profesion, usuario[i].provincia);
@@ -145,18 +145,18 @@ int ImprimirDatos() {
 //Función para imprimir los datos de los ficheros
 
 int ImprimirFicheros (){
-	
+
 	int num_fuentes = 0;
-	
+
 	char linea[100], opcion;
-	
+
 	struct TFuente fuentes[TAM_MAX];
 	//struct TCabecera cabecera;
-	
+
 	FILE *flavapies, *fchamberi, *fsalamanca;
-	
+
 	//Importante o habría que usar el punto como separador decimal.
-	setlocale(LC_ALL, "spanish"); 
+	setlocale(LC_ALL, "spanish");
 
 	printf("Introduce el fichero del cual quieres saber los datos: \n");
 	printf("	1. Lavapies (l/L).\n");
@@ -172,11 +172,11 @@ int ImprimirFicheros (){
 			printf("Error en la apertura de salida.\n");
 			return -1;
 		}
-	
-	
+
+
 		fgets(linea, 100, flavapies);
 		printf("%s", linea);
-	
+
    		while (fscanf(flavapies, "%s %f %d %d %d", fuentes[num_fuentes].fuentes, &fuentes[num_fuentes].pH, &fuentes[num_fuentes].conductividad, &fuentes[num_fuentes].turbidez, &fuentes[num_fuentes].coliformes) != EOF) {
 	  		 printf("%s\t\t %.2f\t\t\t %d\t\t %d\t\t %d\n", fuentes[num_fuentes].fuentes, fuentes[num_fuentes].pH, fuentes[num_fuentes].conductividad, fuentes[num_fuentes].turbidez, fuentes[num_fuentes].coliformes);
 	  		 if (++num_fuentes >= TAM_MAX){
@@ -184,23 +184,23 @@ int ImprimirFicheros (){
         		break;
 			}
    		 }
-    
+
     	if(num_fuentes == 0){
     		printf("Error: archivo vacio\n");
-		} 
+		}
 		fclose (flavapies);
-		
+
 	} else if (opcion == 'c' || opcion == 'C'){
 		fchamberi = fopen("Chamberi.txt", "r");
 		if(fchamberi == NULL) {
 			printf("Error en la apertura de salida.\n");
 			return -1;
 		}
-	
-	
+
+
 		fgets(linea, 100, fchamberi);
 		printf("%s", linea);
-	
+
    		while (fscanf(fchamberi, "%s %f %d %d %d", fuentes[num_fuentes].fuentes, &fuentes[num_fuentes].pH, &fuentes[num_fuentes].conductividad, &fuentes[num_fuentes].turbidez, &fuentes[num_fuentes].coliformes) != EOF) {
 	  		 printf("%s\t\t %.2f\t\t %d\t\t %d\t\t\t %d\n", fuentes[num_fuentes].fuentes, fuentes[num_fuentes].pH, fuentes[num_fuentes].conductividad, fuentes[num_fuentes].turbidez, fuentes[num_fuentes].coliformes);
 	  		 if (++num_fuentes >= TAM_MAX){
@@ -208,23 +208,23 @@ int ImprimirFicheros (){
         		break;
 			}
    		 }
-    
+
     	if(num_fuentes == 0){
     		printf("Error: archivo vacio\n");
-		} 
+		}
 		fclose (fchamberi);
-		
+
 	} else if (opcion == 's' || opcion == 'S'){
 		fsalamanca = fopen("Salamanca.txt", "r");
 		if(fsalamanca == NULL) {
 			printf("Error en la apertura de salida.\n");
 			return -1;
 		}
-	
-	
+
+
 		fgets(linea, 100, fsalamanca);
 		printf("%s", linea);
-	
+
    		while (fscanf(fsalamanca, "%s %f %d %d %d", fuentes[num_fuentes].fuentes, &fuentes[num_fuentes].pH, &fuentes[num_fuentes].conductividad, &fuentes[num_fuentes].turbidez, &fuentes[num_fuentes].coliformes) != EOF) {
 	  		 printf("%s\t %.2f\t\t %d\t\t %d\t\t %d\n", fuentes[num_fuentes].fuentes, fuentes[num_fuentes].pH, fuentes[num_fuentes].conductividad, fuentes[num_fuentes].turbidez, fuentes[num_fuentes].coliformes);
 	  		 if (++num_fuentes >= TAM_MAX){
@@ -232,16 +232,16 @@ int ImprimirFicheros (){
         		break;
 			}
    		 }
-    
+
     	if(num_fuentes == 0){
     		printf("Error: archivo vacio\n");
-		} 
+		}
 		fclose (fsalamanca);
 	} else{
 		printf("La opción introducida no es válida, vuelvalo a intentar.\n");
 	}
 
-	
+
     return 0;
 }
 
@@ -265,7 +265,7 @@ int Instrucciones(){
 }
 
 //Función verificación de datos
-int VerificacionDatos (){ 
+int VerificacionDatos (){
 	int num_fuentes = 0;
 	char respuesta;
 	printf("¿Son sus datos correctos? Si(s) o No(n): ");
@@ -284,21 +284,21 @@ int VerificacionDatos (){
 //Función pH
 int pH() {
 	int contadorsalamanca, contadorlavapies, contadorchamberi;
-	
+
 	char linea[100];
-	
+
 	int num_fuentes = 0;
-	
+
 	struct TFuente fuentes[TAM_MAX];
-	
+
 	FILE *flavapies, *fsalamanca, *fchamberi;
-	
+
 		flavapies = fopen("Lavapies.txt", "r");
 		if(flavapies == NULL) {
 			printf("Error en la apertura de salida.\n");
 			return -1;
 		}
-	
+
    		while (fscanf(flavapies, "%s %f %d %d %d", fuentes[num_fuentes].fuentes, &fuentes[num_fuentes].pH, &fuentes[num_fuentes].conductividad, &fuentes[num_fuentes].turbidez, &fuentes[num_fuentes].coliformes) != EOF) {
 	  		 if (++num_fuentes >= TAM_MAX){
         		printf("Error: demasiadas fuentes en el fichero\n");
@@ -308,20 +308,20 @@ int pH() {
 				contadorlavapies++;
 			}
    		 }
-    
+
     	if(num_fuentes == 0){
     		printf("Error: archivo vacio\n");
-		} 
+		}
 		fclose (flavapies);
-		
+
 
 		fchamberi = fopen("Chamberi.txt", "r");
 		if(fchamberi == NULL) {
 			printf("Error en la apertura de salida.\n");
 			return -1;
 		}
-	
-	
+
+
    		while (fscanf(fchamberi, "%s %f %d %d %d", fuentes[num_fuentes].fuentes, &fuentes[num_fuentes].pH, &fuentes[num_fuentes].conductividad, &fuentes[num_fuentes].turbidez, &fuentes[num_fuentes].coliformes) != EOF) {
 	  		 if (++num_fuentes >= TAM_MAX){
         		printf("Error: demasiadas fuentes en el fichero\n");
@@ -331,18 +331,18 @@ int pH() {
 				contadorchamberi++;
 			}
    		 }
-    
+
     	if(num_fuentes == 0){
     		printf("Error: archivo vacio\n");
-		} 
+		}
 		fclose (fchamberi);
-		
+
 		fsalamanca = fopen("Salamanca.txt", "r");
 		if(fsalamanca == NULL) {
 			printf("Error en la apertura de salida.\n");
 			return -1;
 		}
-	
+
    		while (fscanf(fsalamanca, "%s %f %d %d %d", fuentes[num_fuentes].fuentes, &fuentes[num_fuentes].pH, &fuentes[num_fuentes].conductividad, &fuentes[num_fuentes].turbidez, &fuentes[num_fuentes].coliformes) != EOF) {
 	  		 if (++num_fuentes >= TAM_MAX){
         		printf("Error: demasiadas fuentes en el fichero\n");
@@ -352,10 +352,10 @@ int pH() {
 				contadorsalamanca++;
 			}
    		 }
-    
+
     	if(num_fuentes == 0){
     		printf("Error: archivo vacio\n");
-		} 
+		}
 		fclose (fsalamanca);
 
 	if (contadorsalamanca > contadorlavapies && contadorsalamanca > contadorchamberi){
@@ -369,13 +369,13 @@ int pH() {
 	return 0;
 }
 
-//Funcion promedio 
+//Funcion promedio
 float promedio (int funcion, float dim){
-   
+
     float resultado;
-   
+
     resultado = (float) funcion/dim;
-   
+
     return resultado;
 }
 
@@ -384,12 +384,12 @@ void encuesta() {
 	fflush(stdin);
 	system("cls");
 	printf("Encuesta de valoración de la Aplicación\n");
-	printf("La respuesta de estas preguntas nos permite hacer un seguimiento de la aplicación para mejor la experiencia de los usuarios\n\n");
-	
-	int utilidad, experiencia, uso, dim = 3;
-	
+	printf("La respuesta de estas preguntas nos permite hacer un seguimiento de la aplicación para mejorar la experiencia de los usuarios\n\n");
 
-	
+	int utilidad, experiencia, uso, dim = 3;
+
+
+
 	//Preguntar y obtener respuestas del usuario
 	printf("	1. ¿Ha encontrado útil la aplicación? (1-5)\n");
     printf("		RESPUESTA: ");
@@ -400,17 +400,17 @@ void encuesta() {
     printf("	3. ¿Volverías a utilizar la aplicación? (1-5)\n");
     printf("		RESPUESTA: ");
     scanf("%d", &uso);
-	
-	//resultados por pantalla 
+
+	//resultados por pantalla
 	printf("    \nResultados:\n");
     printf("	1. Utilidad: %.2f\n", promedio (utilidad,  dim));
     printf("	2. Intuitiva: %.2f\n", promedio (experiencia, dim));
-    printf("	3. Reutilización: %.2f\n", promedio (uso, dim)); 
+    printf("	3. Reutilización: %.2f\n", promedio (uso, dim));
     //Resultado final sobre 5
     printf("	Resultado final sobre 5 de su experiencia con la aplicación: %.2f\n", promedio (utilidad,  dim) + promedio (experiencia, dim) + promedio (uso, dim));
 }
 
-//Función lectura de fichero turbidez 
+//Función lectura de fichero turbidez
 int Turbidez(){
     FILE *pturbidez;
     pturbidez = fopen("Turbidez.txt", "r");
@@ -429,7 +429,7 @@ int Turbidez(){
     return 0;
 }
 
-//Función lectura de fichero coliformes 
+//Función lectura de fichero coliformes
 int Coliformes(){
     FILE *pcoliformes;
     pcoliformes = fopen("Coliformes.txt", "r");
@@ -449,7 +449,7 @@ int Coliformes(){
 }
 
 
-//Función lectura fichero pH 
+//Función lectura fichero pH
 int ficheroPH(){
     FILE *pPH;
     pPH = fopen("pH.txt", "r");
@@ -470,12 +470,12 @@ int ficheroPH(){
 
 //Función MenúPromedio
 void menuPromedio () {
-	
+
 	int opcion2;
 	setlocale (LC_CTYPE,"spanish");
-	
+
 	do {
-	
+
 	printf("\n\n PROMEDIO DE PROPIEDADES DE LAS FUENTES \n\n");
 	printf("    \n\n1. Calidad promedio según el ph\n");
 	printf("	2. Calidad promedio según la conductividad\n");
@@ -485,37 +485,37 @@ void menuPromedio () {
 	fflush(stdin);
 	printf("   OPCIÓN: ");
 	scanf("%d", &opcion2);
-	
+
 	switch (opcion2) {
-		
-		case 1: 
+
+		case 1:
 			system("cls");
-			//función leer fichero 
+			//función leer fichero
 			ficheroPH ();
 			//función pH
 			pH ();
-			break; 
-		case 2: 
-			system("cls");
-			//funcion conductividad 
 			break;
-		case 3: 
+		case 2:
 			system("cls");
-			//Función leer fichero 
+			//funcion conductividad
+			break;
+		case 3:
+			system("cls");
+			//Función leer fichero
 			Turbidez ();
 			//función turbidez
 			break;
-		case 4: 
+		case 4:
 			system("cls");
-			//función leer fichero 
+			//función leer fichero
 			Coliformes ();
 			//funcion coliformes
 			break;
-		
+
 	}
-	
+
 	} while(opcion2 != 5);
-	
+
 }
 
 
@@ -523,13 +523,13 @@ int main () {
 	//Declaración de variables
 	int i, opcion, opcion1, opcion2;
 	//char respuesta;
-	FILE *fdatos;	
+	FILE *fdatos;
 	//Imprimir Banner
 	Banner();
-	
+
 	//Podemos poner tildes
 	setlocale (LC_CTYPE,"spanish");
-	
+
 	do{
 		printf ("\n");
 		printf("	MENÚ DE OPCIONES\n");
@@ -542,26 +542,26 @@ int main () {
 
 		printf("	OPCIÓN: ");
 		scanf("%d", &opcion);
-		
+
 		switch(opcion){
 			case 1:
 				system("cls");
 				Instrucciones();
 				break;
-				
-			case 2: //Añadir función 
+
+			case 2: //Añadir función
 				system("cls");
             	printf("\n");
             	InicioDeSesion ();
 				break;
-				
+
 			case 3:
 				system("cls");
             	printf("\n");
 				ImprimirDatos();
 				VerificacionDatos();
 				break;
-			
+
 			case 4:
 				system("cls");
 				do{
@@ -576,31 +576,31 @@ int main () {
 					fflush(stdin);
 					printf("	OPCIÓN: ");
 					scanf("%d", &opcion1);
-		
+
 					switch(opcion1){
 						case 1:
 							fflush(stdin);
 							system("cls");
 							//función leer ficheros por barrio
-							ImprimirFicheros (); 
+							ImprimirFicheros ();
 							break;
-				
+
 						case 2:
 							fflush(stdin);
 							system("cls");
             				//función menú
             				menuPromedio ();
 							break;
-			
-						case 3: 
+
+						case 3:
 							fflush(stdin);
 							system("cls");
-							//Motivo de la utilización de la aplicación con porcetajes y opciones 
+							//Motivo de la utilización de la aplicación con porcetajes y opciones
 							break;
-			
+
 						case 4:
                             encuesta();
-							break; 
+							break;
 						}
 					}while(opcion1 != 5);
 		}
@@ -608,6 +608,6 @@ int main () {
 
 	system("cls");
 	printf("FIN DEL PROGRAMA\n");
-	
-	return 0; 
+
+	return 0;
 }
