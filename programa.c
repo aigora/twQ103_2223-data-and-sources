@@ -95,7 +95,7 @@ int InicioDeSesion () {
 		contadorestudiante++;
 		encontrado = 1;
 	} else if(strcmp(usuario[i].profesion, "profesor") == 0){
-		contadorprofesor++;
+		contadorprofesor++; //ESTO HABRÍA Q BORRARLO
 		encontrado = 1;
 	}else if(strcmp(usuario[i].profesion, "ciudadano") == 0){
 		contadorciudadano++;
