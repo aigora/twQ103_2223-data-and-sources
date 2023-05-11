@@ -4,11 +4,11 @@ Nuestro proyecto consiste en una aplicación que ofrece información sobre las dis
 
 ## Integrantes del equipo
 
-María Mezquida Fernández (mmezquidaf)
+María Mezquida Fernández (mmezquidaf).
 
-Carmen María Merino Montero (CM2113) 
+Carmen María Merino Montero (CM2113).
 
-María Teresa Corrales Torresano (Teresa-CorralesTorresano)
+María Teresa Corrales Torresano (Teresa-CorralesTorresano).
 
 ## Objetivos del trabajo
 
