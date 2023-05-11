@@ -468,6 +468,43 @@ int ficheroPH(){
     return 0;
 }
 
+
+//Función menuUtilidad 
+void menuUtil () {
+	
+	int opcion3;
+	setlocale (LC_CTYPE,"spanish");
+
+	do {	
+	
+	printf("	Introduzca el motivo de la utilización de la aplicación: \n");
+	printf(" 	1.Personal\n");
+	printf(" 	2.Academico\n");
+	printf("	3.Cientifico\n");
+	scanf("%d", &opcion3);
+	
+	
+	switch(opcion3) {
+		
+		case 1:
+			system("cls");
+			//función leer fichero de información 
+			break;
+		case 2:
+			system("cls");
+			//funcion  leer fichero de información 
+			break;
+		case 3:
+			system("cls");
+			//Función leer fichero de información 
+			break;
+	
+	}
+	
+	} while(opcion3 != 4);
+	
+}
+
 //Función MenúPromedio
 void menuPromedio () {
 
@@ -521,7 +558,7 @@ void menuPromedio () {
 
 int main () {
 	//Declaración de variables
-	int i, opcion, opcion1, opcion2;
+	int i, opcion, opcion1, opcion2, opcion3;
 	//char respuesta;
 	FILE *fdatos;
 	//Imprimir Banner
@@ -595,7 +632,8 @@ int main () {
 						case 3:
 							fflush(stdin);
 							system("cls");
-							//Motivo de la utilización de la aplicación con porcetajes y opciones
+							//Motivo de la utilización de la aplicación 
+							menuUtil ();
 							break;
 
 						case 4:
