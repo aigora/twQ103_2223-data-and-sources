@@ -17,14 +17,7 @@ María Teresa Corrales Torresano (Teresa-CorralesTorresano).
 *Se utilizarán 8 ficheros (archivo.txt), 7 de lectura: 3 son de tres barrios distintos con sus correspondientes fuentes; otros 3 con la información relativa a los coliformes, turbidez y pH; y otro con las instrucciones. El último fichero se genera cuando el usuario introduce sus datos personales.
 
 *Describimos varias funciones: 
-	-Banner.
-	-Inicio de sesión.
-	-Imprimir datos del fichero de inicio de sesión, es decir, de los datos personales introducidos (generación de un fichero).
-	-Lectura de los ficheros y llamar a la función en el main para imprimirlos por pantalla. 
-	-Verificación de datos.
-	-Menú promedio de los parámetros de las fuentes.  
-	-Promedios propiedades del agua.
-	-Menú encuesta final.
+Banner; inicio de sesión; imprimir datos del fichero de inicio de sesión, es decir, de los datos personales introducidos (generación de un fichero); lectura de los ficheros y llamar a la función en el main para imprimirlos por pantalla; verificación de datos; menú promedio de los parámetros de las fuentes; promedios propiedades del agua; menú encuesta final.
 
 *Utilización de vectores de estructuras para guardar los datos del usuario, y otra para las propiedades de las fuentes.
 
