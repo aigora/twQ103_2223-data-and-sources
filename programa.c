@@ -901,25 +901,22 @@ void menuUtil () {
 	scanf("%d", &opcion3);
 	
 	
-	switch(opcion3) {
+		switch(opcion3) {
 		
-		case 1:
-			system("cls");
-			//función leer fichero de información 
-			break;
-		case 2:
-			system("cls");
-			//funcion  leer fichero de información 
-			break;
-		case 3:
-			system("cls");
-			//Función leer fichero de información 
-			break;
-	
-	}
-	
+			case 1:
+				system("cls");
+				//función leer fichero de información 
+				break;
+			case 2:
+				system("cls");
+				//funcion  leer fichero de información 
+				break;
+			case 3:
+				system("cls");
+				//Función leer fichero de información 
+				break;
+		}
 	} while(opcion3 != 4);
-	
 }
 
 //Función MenúPromedio
@@ -1056,7 +1053,6 @@ void MenuOpciones (){
 				break;
 		}
 	}while (opcion != 5);
-
 }
 
 int main () {
