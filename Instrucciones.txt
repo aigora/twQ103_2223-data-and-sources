@@ -1,12 +1,15 @@
-Data&Sources consiste en un programa de recopilación de datos de las distintas fuentes de agua que pertenecen a tres barrios de Madrid: Lavapiés, Chamberí y Salamanca. Ofrece distintas alternativas al usuario. 
+	Data&Sources consiste en un programa de recopilación de datos de las distintas fuentes de agua 
+	que pertenecen a tres barrios de Madrid: Lavapiés, Chamberí y Salamanca. Ofrece distintas alternativas al usuario. 
 
-Primero de todo el usuario debe iniciar sesión aportando los datos personales que se solicitan,
-si se selecciona la opción “Verificación de datos” se muestran por pantalla los datos introducidos para comprobar que son correctos.
-A continuación, con la opción “Iniciar programa” se muestra por pantalla el menú inicial con las siguientes alternativas:
+	Primero de todo el usuario debe iniciar sesión aportando los datos personales que se solicitan,
+	si se selecciona la opción “Verificación de datos” se muestran por pantalla los datos introducidos para comprobar que son correctos.
+	A continuación, con la opción “Iniciar programa” se muestra por pantalla el menú inicial con las siguientes alternativas:
+
 	1. Consulta datos almacenados de fuentes.
 	2. Promedio de propiedades del agua.
 	3. Calidad del agua de la fuente según el pH.
 	4. Motivos de utilización.
 	5. Valoración final.
 	6. Salida de la opción “Iniciar programa”.
-Por último, se selecciona la opción 5 “Salir del programa”.  
+
+	Por último, se selecciona la opción 5 “Salir del programa”.  
