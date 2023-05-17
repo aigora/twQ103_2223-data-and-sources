@@ -173,9 +173,8 @@ int ImprimirFicheros (){
 
    		while (fscanf(flavapies, "%s %f %d %d %d", fuentes[num_fuentes].fuentes, &fuentes[num_fuentes].pH, &fuentes[num_fuentes].conductividad, &fuentes[num_fuentes].turbidez, &fuentes[num_fuentes].coliformes) != EOF) {
 	  		 printf("%s\t\t %.2f\t\t\t %d\t\t %d\t\t %d\n", fuentes[num_fuentes].fuentes, fuentes[num_fuentes].pH, fuentes[num_fuentes].conductividad, fuentes[num_fuentes].turbidez, fuentes[num_fuentes].coliformes);
-	  		 if (num_fuentes >= TAM_MAX){
+	  		 if (++num_fuentes >= TAM_MAX){
         		printf("Error: demasiadas fuentes en el fichero\n");
-        		num_fuentes++;
         		break;
 			}
    		 }
@@ -913,6 +912,7 @@ void menuPromedio () {
 			break;
 		case 2:
 			system("cls");
+			LecturaFicheroInformacion("Conductividad.txt");
 			CalidadConductividad();
 			break;
 		case 3:
