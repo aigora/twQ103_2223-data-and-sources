@@ -12,7 +12,7 @@ María Teresa Corrales Torresano (Teresa-CorralesTorresano).
 
 ## Objetivos del trabajo
 
-*Establecer un menú de opciones que permita: 1. visualizar las instrucciones de la aplicación; 2. inicio de sesión: aportando nombre, apellidos, profesión (estudiante, profesor o ciudadano) y provincia; 3. verificación de datos, es decir, el programa muestra por pantalla los datos introducidos para que el usuario compruebe que son correctos; 4. inicio del programa, donde se abre el menú inicial con cinco alternativas (1. consultar datos almacenados de fuentes; 2. promedio de propiedades de las fuentes; 3. motivos de utilización; 4. valoración final; 5. salir). Por último, la opción 5. salida del programa.
+*Establecer un menú de opciones que permita: 1. visualizar las instrucciones de la aplicación; 2. inicio de sesión: aportando nombre, apellidos, profesión y provincia; 3. verificación de datos, es decir, el programa muestra por pantalla los datos introducidos para que el usuario compruebe que son correctos; 4. inicio del programa, donde se abre el menú inicial con cuatro alternativas (1. consultar datos almacenados de fuentes; 2. promedio de propiedades de las fuentes; 3. valoración final; 4. salir). Por último, la opción 5. salida del programa.
 
 *Se utilizarán 8 ficheros (archivo.txt), 7 de lectura: 3 son de tres barrios distintos con sus correspondientes fuentes; otros 3 con la información relativa a los coliformes, turbidez y pH; y otro con las instrucciones. El último fichero se genera cuando el usuario introduce sus datos personales.
 
