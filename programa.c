@@ -886,38 +886,6 @@ void CalidadColiformes() {
 	}while (opcion!=4);	
 }
 
-//Función menuUtilidad 
-void menuUtil () {
-	
-	int opcion3;
-	setlocale (LC_CTYPE,"spanish");
-
-	do {	
-	printf("	Introduzca el motivo de la utilización de la aplicación: \n");
-	printf(" 	1.Personal\n");
-	printf(" 	2.Academico\n");
-	printf("	3.Cientifico\n");
-	printf("	OPCIÓN: ");
-	scanf("%d", &opcion3);
-	
-	
-		switch(opcion3) {
-		
-			case 1:
-				system("cls");
-				//función leer fichero de información 
-				break;
-			case 2:
-				system("cls");
-				//funcion  leer fichero de información 
-				break;
-			case 3:
-				system("cls");
-				//Función leer fichero de información 
-				break;
-		}
-	} while(opcion3 != 4);
-}
 
 //Función MenúPromedio
 void menuPromedio () {
@@ -976,9 +944,8 @@ void MenuInicial() {
 		printf("	Escriba el número que representa la acción que desea realizar:\n");
     	printf("	1. Consultar datos almacenados de fuentes\n");
     	printf("	2. Promedio de propiedades de las fuentes\n");
-    	printf("	3. Motivos de utilización\n");
-    	printf("	4. Valoración final\n");
-    	printf("	5. Salir\n\n");
+    	printf("	3. Valoración final\n");
+    	printf("	4. Salir\n\n");
 		fflush(stdin);
 		printf("	OPCIÓN: ");
 		scanf("%d", &opcion1);
@@ -995,18 +962,14 @@ void MenuInicial() {
 				system("cls");
             	menuPromedio ();
 				break;
-
+				
 			case 3:
 				fflush(stdin);
 				system("cls");
-				menuUtil ();
-				break;
-
-			case 4:
                 encuesta();
 				break;
 		}
-	}while(opcion1 != 5);
+	}while(opcion1 != 4);
 }
 
 void MenuOpciones (){
