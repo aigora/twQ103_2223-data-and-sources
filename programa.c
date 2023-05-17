@@ -62,8 +62,6 @@ int InicioDeSesion () {
 
 	struct TUsuario usuario [TAM_MAX];
 
-	int encontrado = 0, contadorestudiante = 0, contadorprofesor = 0, contadorciudadano = 0;
-
 	int i = 0;
 
 	FILE *fdatos;
@@ -88,22 +86,13 @@ int InicioDeSesion () {
 	printf("\n");
 	fprintf(fdatos, "%s\t", usuario[i].apellidos);
 
-	printf("	Intruduce tu profesión (estudiante, profesor o ciudadano): \n");
+	printf("	Intruduce tu profesión: \n");
 	printf("	PROFESIÓN: ");
 	fflush(stdin);
 	gets(usuario[i].profesion);
 	printf("\n");
 	fprintf(fdatos, "%s\t", usuario[i].profesion);
-	if(strcmp(usuario[i].profesion, "estudiante") == 0){
-		encontrado = 1;
-	} else if(strcmp(usuario[i].profesion, "profesor") == 0){
-		encontrado = 1;
-	}else if(strcmp(usuario[i].profesion, "ciudadano") == 0){
-		encontrado = 1;
-	}else{
-		printf("	No ha seleccionado ninguna opción correcta vuelva a intentarlo.\n");
-		return 0;
-	}
+	
 
 	printf("	Intruduce tu provincia: \n");
 	printf("	PROVINCIA: ");
