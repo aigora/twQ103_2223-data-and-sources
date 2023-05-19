@@ -62,6 +62,8 @@ int InicioDeSesion () {
 
 	struct TUsuario usuario [TAM_MAX];
 
+	int encontrado = 0, contadorestudiante = 0, contadorprofesor = 0, contadorciudadano = 0;
+
 	int i = 0;
 
 	FILE *fdatos;
@@ -86,13 +88,22 @@ int InicioDeSesion () {
 	printf("\n");
 	fprintf(fdatos, "%s\t", usuario[i].apellidos);
 
-	printf("	Intruduce tu profesión: \n");
+	printf("	Intruduce tu profesión (estudiante, profesor o ciudadano): \n");
 	printf("	PROFESIÓN: ");
 	fflush(stdin);
 	gets(usuario[i].profesion);
 	printf("\n");
 	fprintf(fdatos, "%s\t", usuario[i].profesion);
-	
+	if(strcmp(usuario[i].profesion, "estudiante") == 0){
+		encontrado = 1;
+	} else if(strcmp(usuario[i].profesion, "profesor") == 0){
+		encontrado = 1;
+	}else if(strcmp(usuario[i].profesion, "ciudadano") == 0){
+		encontrado = 1;
+	}else{
+		printf("	No ha seleccionado ninguna opción correcta vuelva a intentarlo.\n");
+		return 0;
+	}
 
 	printf("	Intruduce tu provincia: \n");
 	printf("	PROVINCIA: ");
@@ -162,8 +173,9 @@ int ImprimirFicheros (){
 
    		while (fscanf(flavapies, "%s %f %d %d %d", fuentes[num_fuentes].fuentes, &fuentes[num_fuentes].pH, &fuentes[num_fuentes].conductividad, &fuentes[num_fuentes].turbidez, &fuentes[num_fuentes].coliformes) != EOF) {
 	  		 printf("%s\t\t %.2f\t\t\t %d\t\t %d\t\t %d\n", fuentes[num_fuentes].fuentes, fuentes[num_fuentes].pH, fuentes[num_fuentes].conductividad, fuentes[num_fuentes].turbidez, fuentes[num_fuentes].coliformes);
-	  		 if (++num_fuentes >= TAM_MAX){
+	  		 if (num_fuentes >= TAM_MAX){
         		printf("Error: demasiadas fuentes en el fichero\n");
+        		num_fuentes++;
         		break;
 			}
    		 }
@@ -901,7 +913,6 @@ void menuPromedio () {
 			break;
 		case 2:
 			system("cls");
-			LecturaFicheroInformacion("Conductividad.txt");
 			CalidadConductividad();
 			break;
 		case 3:
