@@ -30,7 +30,7 @@ struct TCabecera {
 	char columna[30];
 };
 
-//Funciones
+//FUNCIONES
 
 //Función banner
 void Banner(){
@@ -259,7 +259,7 @@ int LecturaFicheroInformacion(char *nombreFichero){
     return 0;
 }
 
-//Función verificación de datos
+//Función verificación de datos personales
 int VerificacionDatos (){
 	int num_fuentes = 0;
 	char respuesta;
@@ -505,7 +505,7 @@ float calcularturbidez(char* nombreFichero){
 	return (mediaturbidez/(float) 25);
 }
 
-//Función contador conductividad
+//Función contador turbidez
 int Contadorturbidez(char* nombreFichero){
 		
 	int num_fuentes = 0;
@@ -601,7 +601,7 @@ void CalidadTurbidez() {
 	}while (opcion!=4);	
 }
 
-//Función media ph
+//Función media pH
 float calcularpH(char* nombreFichero){
 		
 	int num_fuentes = 0;
@@ -647,7 +647,7 @@ float calcularpH(char* nombreFichero){
 	return (mediaph/(float) 25);
 }
 
-//Función contador ph
+//Función contador pH
 int Contadorph(char* nombreFichero){
 		
 	int num_fuentes = 0;
@@ -696,7 +696,7 @@ int Contadorph(char* nombreFichero){
 	return contadorph;
 }
 
-//Función calidad ph
+//Función calidad pH
 void CalidadPh() {
 	int opcion;
 	setlocale (LC_CTYPE,"spanish");
@@ -790,7 +790,7 @@ float calcularcoliformes(char* nombreFichero){
 	return (mediacoliformes/(float) 25);
 }
 
-//Función contar coliformes
+//Función contador coliformes
 int Contadorcoliformes(char* nombreFichero){
 		
 	int num_fuentes = 0;
