@@ -241,7 +241,7 @@ int ImprimirFicheros (){
     return 0;
 }
 
-//Función lectura de fichero instrucciones
+//Función lectura de ficheros
 int LecturaFicheroInformacion(char *nombreFichero){
     FILE *farchivo;
     farchivo = fopen(nombreFichero, "r");
@@ -257,6 +257,7 @@ int LecturaFicheroInformacion(char *nombreFichero){
         printf("%c", c);
     }
     printf("\n\n");
+    fclose(farchivo);
     return 0;
 }
 
@@ -271,8 +272,10 @@ int VerificacionDatos (){
 		printf("Vuelva a introducir sus datos.\n");
 		InicioDeSesion();
 		return 0;
-	}else{
+	}else if (respuesta == 's' || respuesta == 'S'){
 		printf("Sus datos son correctos, puede continuar con el programa.\n");
+	}else {
+		printf("Error, vuelva a intentarlo.\n");
 	}
 	return 0;
 }
@@ -290,6 +293,7 @@ float promedio (int funcion, float dim){
 //Función encuesta
 void encuesta() {
 	fflush(stdin);
+	setlocale (LC_CTYPE,"spanish");
 	system("cls");
 	printf("Encuesta de valoración de la Aplicación\n");
 	printf("La respuesta de estas preguntas nos permite hacer un seguimiento de la aplicación para mejorar la experiencia de los usuarios\n\n");
