@@ -35,7 +35,7 @@ struct TCabecera {
 //Función banner
 void Banner(){
 	HANDLE hConsole = GetStdHandle (STD_OUTPUT_HANDLE);
-	printf("	Bienvenido a Data&Sources, esperamos que te sea util la aplicacion :)\n");
+	printf("	Bienvenido a Data&Sources, esperamos que te sea útil la aplicacion :)\n");
 	printf("\n");
 
 	color(hConsole, 1);	printf("      __________     \n"); color(hConsole, 1);
@@ -172,7 +172,7 @@ int ImprimirFicheros (){
 		printf("%s", linea);
 
    		while (fscanf(flavapies, "%s %f %d %d %d", fuentes[num_fuentes].fuentes, &fuentes[num_fuentes].pH, &fuentes[num_fuentes].conductividad, &fuentes[num_fuentes].turbidez, &fuentes[num_fuentes].coliformes) != EOF) {
-	  		 printf("%s\t\t %.2f\t\t\t %d\t\t %d\t\t %d\n", fuentes[num_fuentes].fuentes, fuentes[num_fuentes].pH, fuentes[num_fuentes].conductividad, fuentes[num_fuentes].turbidez, fuentes[num_fuentes].coliformes);
+	  		 printf("%s\t\t %.2f\t\t\t %d\t %d\t\t\t\t %d\n", fuentes[num_fuentes].fuentes, fuentes[num_fuentes].pH, fuentes[num_fuentes].conductividad, fuentes[num_fuentes].turbidez, fuentes[num_fuentes].coliformes);
 	  		 if (num_fuentes >= TAM_MAX){
         		printf("Error: demasiadas fuentes en el fichero\n");
         		num_fuentes++;
@@ -221,7 +221,7 @@ int ImprimirFicheros (){
 		printf("%s", linea);
 
    		while (fscanf(fsalamanca, "%s %f %d %d %d", fuentes[num_fuentes].fuentes, &fuentes[num_fuentes].pH, &fuentes[num_fuentes].conductividad, &fuentes[num_fuentes].turbidez, &fuentes[num_fuentes].coliformes) != EOF) {
-	  		 printf("%s\t %.2f\t\t %d\t\t %d\t\t %d\n", fuentes[num_fuentes].fuentes, fuentes[num_fuentes].pH, fuentes[num_fuentes].conductividad, fuentes[num_fuentes].turbidez, fuentes[num_fuentes].coliformes);
+	  		 printf("%s\t\t %.2f\t\t\t %d\t\t %d\t\t\t %d\n", fuentes[num_fuentes].fuentes, fuentes[num_fuentes].pH, fuentes[num_fuentes].conductividad, fuentes[num_fuentes].turbidez, fuentes[num_fuentes].coliformes);
 	  		 if (++num_fuentes >= TAM_MAX){
         		printf("Error: demasiadas fuentes en el fichero\n");
         		break;
