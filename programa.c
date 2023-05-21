@@ -34,8 +34,9 @@ struct TCabecera {
 
 //Función banner
 void Banner(){
+	setlocale (LC_CTYPE,"spanish");
 	HANDLE hConsole = GetStdHandle (STD_OUTPUT_HANDLE);
-	printf("	Bienvenido a Data&Sources, esperamos que te sea util la aplicacion :)\n");
+	printf("	Bienvenido a Data&Sources, esperamos que te sea útil la aplicacion :)\n");
 	printf("\n");
 
 	color(hConsole, 1);	printf("      __________     \n"); color(hConsole, 1);
@@ -913,6 +914,7 @@ void menuPromedio () {
 			break;
 		case 2:
 			system("cls");
+			LecturaFicheroInformacion("Conductividad.txt");
 			CalidadConductividad();
 			break;
 		case 3:

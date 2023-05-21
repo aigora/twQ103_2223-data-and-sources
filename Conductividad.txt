@@ -2,11 +2,13 @@ Información conductividad:
 
 Las aguas potables de mejor calidad tienen una conductividad de 50-500 mmhos/cm. 
 
-La conductividad son sólidos que se encuentran en la naturaleza en forma disuelta. Este parámetro es importante ya que afecta a la calidad del agua, y su valor varía en función de la fuente. Se puede utilizar como indicador de la filtración en el agua.
+La conductividad son sólidos que se encuentran en la naturaleza en forma disuelta. 
+Este parámetro es importante ya que afecta a la calidad del agua, y su valor varía en función de la fuente. 
+Se puede utilizar como indicador de la filtración en el agua.
 
 Algunos de los factores que afectan a la conductividad son:
-La geología de de una zona determinada y la cantidad de iones
-La marea, ya que el aerosol del mar carga las sales hasta que la lluvia los descarga de los nuevos ríos.
-El flujo de los ríos.
-El calor también puede aumentar la conductividad.
+	La geología de de una zona determinada y la cantidad de iones
+	La marea, ya que el aerosol del mar carga las sales hasta que la lluvia los descarga de los nuevos ríos.
+	El flujo de los ríos.
+	El calor también puede aumentar la conductividad.
 
